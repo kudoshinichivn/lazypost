@@ -1,0 +1,151 @@
+html,body{
+	display:block;
+	margin:0;
+	height:100%;
+	width:100%;
+}
+html{
+	background:url(../images/background.png) repeat;
+	font-family:Arial,calibri,tahoma;
+	
+}
+.video{
+	background:#EE6602;
+	padding:5px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+}
+.list{
+	font-family:sans-serif,Arial,sans-serif;
+	font-size:12px;
+}
+.btn{
+	background:#EF6703;
+	margin:0 auto;
+}
+.btn2{
+	
+	background:#aaa5a5;
+	margin:0 auto;
+}
+.message{
+	margin:5%;
+	width:100%;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+
+}
+.link{
+	margin:5%;
+	width:100%;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+
+}
+.consit{
+	background:url(../images/consit.jpg) no-repeat;
+	margin:0;
+	padding:5% 0;
+	background-size: cover;
+    background-position: top right;
+    box-shadow: inset 0 -10px 80px rgba(0,0,0,0.8);
+	
+}
+
+
+.content-bg{
+	background:#FFF;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	padding:1%;
+}
+.tittle {
+	font-family:Amaranth,cursive;
+	font-size:20px;
+	color:#F26802;
+	text-align:center;
+}
+.navibar{
+		
+		list-style:none;
+		margin:0;
+		padding:0;
+		text-align:center;
+		vertical-align:middle;
+}
+.navibar li{
+	display:inline;
+	vertical-align:middle;
+}
+.navibar a{
+		display:inline-block;
+		padding:10px;
+		color:#FFF;
+		font-size: 13px;
+		font-family:sans-serif,Arial,sans-serif;
+		vertical-align:middle;
+}
+.slogan2{
+	
+	text-align:left;
+    font-size: 35px;
+    line-height: 1.2em;
+    color:#FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'FontA_Light',sans-serif;
+	text-shadow: 2px 2px #000;
+}
+.slogan{
+	
+	font-family:Amaranth,cursive;
+	font-size:30px;
+	color:#FF7B00;
+	text-align:left;
+}
+content{
+	padding: 3% 5%;
+	margin:auto;
+}
+.wrapper{
+	
+	height:auto;
+	display: block;
+	position: relative;
+	
+}
+header,footer{
+	color:#FFF;
+	font-family:sans-serif,Arial,sans-serif;
+	border-bottom:1px solid white;
+	vertical-align:middle;
+	display:block;
+	padding:0 2%;
+}
+header{
+	
+	background-color: #F70;
+	background:url(../images/header-bg.png) repeat;
+    background: linear-gradient(to bottom,#F80 0%,#F70 100%);
+}
+.clear {
+    clear: both;
+	height:1px;
+	
+}
+
+footer{
+	clear: both;
+	background:url(../images/footer-bg.png) repeat;
+
+	
+
+}
+
+	
+
+
