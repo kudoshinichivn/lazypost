@@ -258,7 +258,7 @@ function schedule_page()
 	if(checkinput()==true && check_datetime()==true)
 	{
 		
-		$("#process").html('Processing...');
+		$("#process").html("Processing...<i class='uk-icon-spinner uk-icon-spin'></i>");
 		var timezone=gettimezone();
 		var datetime = document.getElementById("date").value+' '+document.getElementById("time").value;
 		var image= document.getElementById("image").value;
@@ -335,7 +335,7 @@ function post_album_group()
 	var images=document.getElementById("images").value;
 	if(check_album_input()==true)
 	{	
-		$("#process").html('<?php echo $processing; ?>');
+		$("#process").html("Processing...<i class='uk-icon-spinner uk-icon-spin'></i>");
 		var album_tittle= document.getElementById("album_tittle").value;
 		var album_decription= document.getElementById("album_decription").value;
 		var inputElems = document.getElementsByTagName("input");
@@ -355,7 +355,7 @@ function post_album_group()
 		   {
 				count++;
 				node_list.push(inputElems[i].value);
-				$.post("http://localhost/lazysales/public/process_album", 
+				$.post("http://localhost/lazysales/public/create_album", 
 					{
 						album_tittle: album_tittle,
 						album_decription: album_decription,
@@ -367,7 +367,7 @@ function post_album_group()
 					{	 
 						
 						posted++;
-						$("#process").html('<?php echo $posted; ?> '+posted+ "/"+count+' <?php echo $page; ?>');
+						$("#process").html('Success: '+posted+ "/"+count+' groups');
 						var temp=Math.round((posted/count)*100);
 						document.getElementById("processbar1").style.display="block";
 						document.getElementById("processbar2").style.display="block";
@@ -386,10 +386,10 @@ function post_album_group()
 
 		}
 		var section="group";
-		$.post("http://localhost/lazysales/public/process_album",
+		$.post("http://localhost/lazysales/public/save",
 			{
-				image:"",
-				message:"",
+				image:list_images,
+				message:album_tittle,
 				link:"",
 				album:'album',
 				node_list: node_list, 
@@ -405,7 +405,7 @@ function post_album_group()
 	else
 	{
 		$("#log").empty();
-		$("#log").html('<?php echo $you_have_not_entered_enough; ?>');
+		$("#log").html('You have not entered enough');
 	}
 }
 function post_album()
@@ -430,7 +430,7 @@ function post_album_page()
 	var images=document.getElementById("images").value;
 	if(check_album_input()==true)
 	{	
-		$("#process").html('<?php echo $processing; ?>');
+		$("#process").html("Processing...<i class='uk-icon-spinner uk-icon-spin'></i>");
 		var album_tittle= document.getElementById("album_tittle").value;
 		var album_decription= document.getElementById("album_decription").value;
 		var inputElems = document.getElementsByTagName("input");
@@ -452,7 +452,7 @@ function post_album_page()
 				count++;
 				node_list.push(inputElems[i].value);
 				access_token_list.push( document.getElementById(inputElems[i].value).name);
-				$.post("http://localhost/lazysales/public/process_album", 
+				$.post("http://localhost/lazysales/public/create_album", 
 					{
 						album_tittle: album_tittle,
 						album_decription: album_decription,
@@ -465,7 +465,7 @@ function post_album_page()
 					{	 
 						
 						posted++;
-						$("#process").html('<?php echo $posted; ?> '+posted+ "/"+count+' <?php echo $page; ?>');
+						$("#process").html('Success: '+posted+ "/"+count+' pages');
 						var temp=Math.round((posted/count)*100);
 						document.getElementById("processbar1").style.display="block";
 						document.getElementById("processbar2").style.display="block";
@@ -484,10 +484,10 @@ function post_album_page()
 
 		}
 		var section="page";
-		$.post("http://localhost/lazysales/public/process_album",
+		$.post("http://localhost/lazysales/public/save",
 			{
-				image:"",
-				message:"",
+				image:list_images,
+				message:album_tittle,
 				link:"",
 				album:'album',
 				node_list: node_list, 
@@ -503,7 +503,7 @@ function post_album_page()
 	else
 	{
 		$("#log").empty();
-		$("#log").html('<?php echo $you_have_not_entered_enough; ?>');
+		$("#log").html('You have not entered enough');
 	}
 }
 function post_page()
@@ -514,7 +514,7 @@ function post_page()
 	{
 		
 		
-		$("#process").html('Processing');
+		$("#process").html("Processing...<i class='uk-icon-spinner uk-icon-spin'></i>");
 		var image= document.getElementById("image").value;
 		var message= document.getElementById("message").value;
 		var link= document.getElementById("link").value;
@@ -587,7 +587,7 @@ function post_group()
 	{
 		
 		
-		$("#process").html('Processing');
+		$("#process").html("Processing...<i class='uk-icon-spinner uk-icon-spin'></i>");
 		var image= document.getElementById("image").value;
 		var message= document.getElementById("message").value;
 		var link= document.getElementById("link").value;

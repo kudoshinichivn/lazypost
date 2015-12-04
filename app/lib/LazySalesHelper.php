@@ -5,7 +5,7 @@ class LazySalesHelper{
 	public static function convert_time($time,$local_timezone,$target_timezone)
 		{
 			date_default_timezone_set($local_timezone);
-			$datetime= new DateTime($time);
+			$datetime = new DateTime($time);
 			$timezone = new DateTimeZone($target_timezone);
 			return $datetime->setTimeZone($timezone)->format('Y-m-d H:i');
 		}

@@ -5,11 +5,8 @@ App::setLocale(Session::get('locale', 'en'));
 
 Route::get('/test', function(){
 
-	// if(Session::has('image'))
-	// 	Session::forget('image');
-	
-	// Session::put('image', Input::get('value'));
-	return Session::get('image');
+	$schedule=LazySalesHelper::convert_time('2015/12/04 12:30',Config::get('timezone.+7'),'GMT');
+	return $schedule;
 });
 
 //Facebook
@@ -20,11 +17,6 @@ Route::get('/login', 'FacebookController@login');
 Route::get('/callback', 'FacebookController@callback');
 
 Route::get('/data/{where}', 'FacebookController@getdata');
-
-// Route::get('/group',function(){
-// 	$where='group';
-// 	FacebookController::getdata($where);
-// });
 
 
 
@@ -48,11 +40,6 @@ Route::post('/post/{type}','PostController@post');
 
 
 //Create album
-Route::post('/create_album',function(){
-	$input=Input::all();
-		echo "<pre>";
-		print_r($input);
-		echo "<pre>";
-});
+Route::post('/create_album','AlbumController@create_album');
 
 

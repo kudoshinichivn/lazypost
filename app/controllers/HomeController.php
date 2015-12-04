@@ -5,22 +5,23 @@ class HomeController extends BaseController {
 	public static function save(){
 
 
+
 		date_default_timezone_set('GMT');
 		$datetime=date("Y-m-d H:i:s");
 		$type="";
-		$image="NULL";
+		$image="";
 		$schedule="0000-00-00 00:00:00";
-
 		if(Input::has('schedule'))
 		{
 			$local_timezone=Config::get('timezone.'.Input::get('timezone'));
-			$time=Input::has('schedule');
+			$time=Input::get('schedule');
 			$target_timezone="GMT";
 			$schedule=LazySalesHelper::convert_time($time,$local_timezone,$target_timezone);
 		}
 		if(Input::has('album'))
 		{
 			$type = "album";
+			$image= json_encode(Input::get('image'));
 			
 		}
 		else
