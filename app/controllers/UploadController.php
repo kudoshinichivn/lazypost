@@ -29,9 +29,7 @@ class UploadController extends BaseController {
 	}
 	public function upload_album(){	
 			
-			$list_images_success=array();
-			$list_images_fail=array();
-			$list_images_fail2=array();	
+			$list_images=array();
 			foreach (Input::file('images') as $image) {
 				
 				
@@ -46,21 +44,17 @@ class UploadController extends BaseController {
 					{
 						
 						$image->move('../public/temp',$name);
-						$list_images_success[]=$name;
+						$list_images[]=$name;
 						
 						
 					}
-					else 
-						
-						$list_images_fail[]=$name;
-				}
-				else 
 					
-					$list_images_fail2[]=$name;
+				}
+				
 			
 			}
 			
-			return View::make('LazySales.upload_album',array('list_images_success' =>$list_images_success,'list_images_fail'=>$list_images_fail,'list_images_fail2'=>$list_images_fail2));
+			return View::make('LazySales.upload_album',array('list_images' =>$list_images));
 			
 		
 			

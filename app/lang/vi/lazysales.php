@@ -2,7 +2,10 @@
 
 return array(
 
-
+	'at'=>'vào lúc';
+	'image'=>'bức ảnh',
+	'message'=>'thông điệp',
+	'link'=>'liên kết',
 	'this_functionality_will_be_available_in_future_versions' => "Chức năng này sẽ được cập nhật trong các phiên bản tiếp theo",
 	'slogan_lazypost' => "LazyPost - Công cụ dành cho người lười",
 	'support' => "Hỗ trợ",
@@ -23,9 +26,8 @@ return array(
 	'select_all' => "Chọn tất cả",
 	'post_to_group' => "Đăng bài",
 	'post_to_page' => "Đăng bài",
-	'you_published_a_image' => "Bạn đã đăng một bức ảnh",
-	'you_published_a_message' => "Bạn đã đăng một thông điệp",
-	'you_published_a_link' => "Bạn đã đăng một liên kết",
+	'you_published_a' => "Bạn đã đăng một ",
+	
 	'connecting' => "Đang kết nối",
 	'processing' => "Đang xử lý",
 	'posted' => "Đã đăng",
@@ -36,9 +38,8 @@ return array(
 	'history_empty' => "Lịch sử đăng bài trống",
 	'cant_load_the_groups_list' => "Không thể tải dữ liệu, bạn không quản trị bất kỳ nhóm nào!",
 	'cant_load_the_pages_list' => "Không thể tải dữ liệu, bạn không quản trị bất kỳ trang nào!",
-	'you_scheduled_a_image' => "Bạn đã đặt lịch đăng một bức ảnh vào lúc",
-	'you_scheduled_a_message' => "Bạn đã đặt lịch đăng một thông điệp vào lúc",
-	'you_scheduled_a_link' => "Bạn đã đặt lịch đăng một liên kết trên vào lúc",
+	'you_scheduled_a' => "Bạn đã đặt lịch đăng một ",
+	
 	'post_now' => "Đăng bài",
 	'schedule' => "Đặt lịch",
 	'your_post_is_scheduled_to' => "Bài viết của bạn đã được đặt lịch đăng trên",

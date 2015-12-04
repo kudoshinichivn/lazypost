@@ -42,7 +42,7 @@
 <header class="wrapper">
 	<div class="uk-width-1-1">
 		<div class="uk-grid">
-			<div class="uk-width-1-1 uk-width-medium-1-3 uk-width-small-1-1 uk-text-center"><a href="<?php Config::get('facebook.redirect_url');?>"><img src="{{ URL::asset('images/lazypost.png') }}"/></a></div>
+			<div class="uk-width-1-1 uk-width-medium-1-3 uk-width-small-1-1 uk-text-center"><a href="{{Config::get('facebook.redirect_url')}}"><img src="{{ URL::asset('images/lazypost.png') }}"/></a></div>
 			<div style="padding-top: 1%;" class="uk-width-1-1 uk-width-medium-1-2 uk-width-small-1-1 uk-text-middle">
 			@section('sidebar')
            	
@@ -65,9 +65,9 @@
 			<p>
 			<p>
 			<p>
-			<span><i class="uk-icon-support"></i> <?php echo Lang::get('lazysales.support'); ?></span><br>
-			<span><i class="uk-icon-envelope"></i> <?php echo Lang::get('lazysales.email'); ?>: support@lazysales.net</span><br>
-			<span><i class="uk-icon-phone"></i> <?php echo Lang::get('lazysales.hotline'); ?>: 0934530808</span><br>
+			<span><i class="uk-icon-support"></i> {{Lang::get('lazysales.support')}}</span><br>
+			<span><i class="uk-icon-envelope"></i> {{Lang::get('lazysales.email')}}: support@lazysales.net</span><br>
+			<span><i class="uk-icon-phone"></i> {{Lang::get('lazysales.hotline')}}: 01694905894</span><br>
 			</div>
 			
 		</div>

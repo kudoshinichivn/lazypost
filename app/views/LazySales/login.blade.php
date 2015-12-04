@@ -18,7 +18,7 @@
 					</div>					
 				</div>
 				<div style="padding-top:5%" class="uk-width-1-1 uk-width-medium-1-2 uk-width-small-1-1 uk-text-middle">
-					<h3 class="slogan2"><?php echo Lang::get('lazysales.slogan_lazypost'); ?></h3>
+					<h3 class="slogan2">{{Lang::get('lazysales.slogan_lazypost')}}</h3>
 					<a onclick="login();"><img src="{{ URL::asset('images/tryitfreetoday.png') }}"/><img src="{{ URL::asset('images/btn_login.png') }}"/></a>
 				</div>
 		</div>
@@ -57,7 +57,7 @@
             var newwindow=window.open('{{$login_url}}','Login by Facebook',features);
  
            if (window.focus) {newwindow.focus()}
-          return false;
+            return false;
         }       
         
 

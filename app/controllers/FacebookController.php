@@ -53,12 +53,12 @@ class FacebookController extends BaseController {
 				$user->save();
 				
 			}
-			
+			return View::make('LazySales.callback',array('result'=>true,'url' =>Config::get('facebook.redirect_url')));
 				
 			
 			
 		}
-		return View::make('LazySales.callback',array('url' =>Config::get('facebook.redirect_url')));
+		return View::make('LazySales.callback',array('result'=>false,'url' =>Config::get('facebook.redirect_url')));
 		
 	}
 	
@@ -109,11 +109,9 @@ class FacebookController extends BaseController {
 
 				}
 			}
-				else
-					return "Access Denied";
+				
 		}
-			else
-					return "Access Denied";
+			
 	}
 	
 	

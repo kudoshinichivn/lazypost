@@ -102,15 +102,13 @@ class HomeController extends BaseController {
 		$fb=LazySalesHelper::fb();
 		$fbApp=LazySalesHelper::fbApp();
 
-		$post = DB::table('posts')
-                    ->where('uid', '=',$_SESSION['uid'] )
-                    ->get();
+		$post = Post::where('uid', '=',$_SESSION['uid'] )->get();
 
-		if(!empty($post))
-		
-			return View::make('LazySales.history',array('post' =>$post));
-				
-	
+		if($post!="[]")
+		{	
+			$target_timezone=Config::get('timezone.'.Input::get('timezone'));
+			return View::make('LazySales.history',array('target_timezone'=>$target_timezone,'post' =>$post));
+		}
 		else
 			return Lang::get('lazysales.history_empty');
 		
