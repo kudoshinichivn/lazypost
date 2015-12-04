@@ -12,22 +12,26 @@ class UploadController extends BaseController {
 			if($extension=="jpg" || $extension =="png" && $size <=2097152)
 			{
 				Input::file('image')->move('../public/temp',$name);
-				echo Lang::get('lazysales.image_loaded_success')." <i class='uk-icon-check-circle'></i>";
+				
+				if(Session::has('image'))
+					Session::forget('image');
+				
 				Session::put('image', $name);
+				
+				return Lang::get('lazysales.image_loaded_success')." <i class='uk-icon-check-circle'></i>";
 				
 			}
 			else
-				echo Lang::get('lazysales.image_loaded_fail')." <i class='uk-icon-close'></i>";
+				return Lang::get('lazysales.image_loaded_fail')." <i class='uk-icon-close'></i>";
 		}
 		else
-			echo Lang::get('lazysales.image_loaded_fail')." <i class='uk-icon-close '></i>";
+			return Lang::get('lazysales.image_loaded_fail')." <i class='uk-icon-close '></i>";
 	}
 	public function upload_album(){	
-			echo "<script>
-				var list_images=[];
-				
-				</script>";
-				
+			
+			$list_images_success=array();
+			$list_images_fail=array();
+			$list_images_fail2=array();	
 			foreach (Input::file('images') as $image) {
 				
 				
@@ -42,48 +46,22 @@ class UploadController extends BaseController {
 					{
 						
 						$image->move('../public/temp',$name);
+						$list_images_success[]=$name;
 						
-						echo "
-						<div class='uk-form-row'><div class='uk-grid'>
-						<div class='uk-width-1-3'>
-						<img style='border: 1px soild #000;' width='200' heigh='150' class='uk-border-rounded' src='../public/temp/".$name."'/>
-						</div>
-						<div class='uk-width-2-3'>
-						<textarea style='width:100%' type='text' id='".$name."' name='".$name."' placeholder='".Lang::get('lazysales.image_decrip')."'></textarea>
-						</div></div></div>
-						<br>
-						<script>
-						list_images.push('".$name."');
 						
-						</script>
-						";
 					}
 					else 
-						echo "
-						<div class='uk-form-row'><div class='uk-grid'>
-						<div class='uk-width-1-3'>
-						<img style='border: 1px soild #000;' width='200' heigh='150' class='uk-border-rounded' src='../public/images/alert.png'/>
-						</div>
-						<div class='uk-width-2-3'>
-						 ".Lang::get('lazysales.could_not_uploaded_image')."<b>".$name."</b><br>
-						 ".Lang::get('lazysales.reason').": ".Lang::get('lazysales.file_is_not_image')."
-						</div></div></div><br>";
+						
+						$list_images_fail[]=$name;
 				}
 				else 
-					echo "
-						<div class='uk-form-row'><div class='uk-grid'>
-						<div class='uk-width-1-3'>
-						<img style='border: 1px soild #000;' width='200' heigh='150' class='uk-border-rounded' src='../public/images/alert.png'/>
-						</div>
-						<div class='uk-width-2-3'>
-						 ".Lang::get('lazysales.could_not_uploaded_image')."<b>".$name."</b><br>
-						 ".Lang::get('lazysales.reason').": ".Lang::get('lazysales.file_too_heavy')."
-						</div></div></div><br>";
-				
-
+					
+					$list_images_fail2[]=$name;
+			
 			}
 			
-		
+			return View::make('LazySales.upload_album',array('list_images_success' =>$list_images_success,'list_images_fail'=>$list_images_fail,'list_images_fail2'=>$list_images_fail2));
+			
 		
 			
 	}

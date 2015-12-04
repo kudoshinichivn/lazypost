@@ -1,17 +1,16 @@
 <?php
 session_start();
 App::setLocale(Session::get('locale', 'en'));
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
+
+Route::get('/test', function(){
+
+	// if(Session::has('image'))
+	// 	Session::forget('image');
+	
+	// Session::put('image', Input::get('value'));
+	return Session::get('image');
+});
 
 //Facebook
 
@@ -49,4 +48,11 @@ Route::post('/post/{type}','PostController@post');
 
 
 //Create album
-Route::post('/create_album','AlbumController@create_album');
+Route::post('/create_album',function(){
+	$input=Input::all();
+		echo "<pre>";
+		print_r($input);
+		echo "<pre>";
+});
+
+

@@ -61,5 +61,6 @@ return array(
 	'reason'=>'Reason',
 	'file_too_heavy'=>'File too heavy',
 	'file_is_not_image'=>'File is not image',
+	
 
 );

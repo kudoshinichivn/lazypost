@@ -1,7 +1,7 @@
 <?php
 class PostController extends BaseController {
-
 	public function post($type){
+		
 		$fb=LazySalesHelper::fb();
 		$fbApp=LazySalesHelper::fbApp();
 		$accessToken;
@@ -23,7 +23,6 @@ class PostController extends BaseController {
 						);
 			}
 			
-
 			
 			if(!empty(Input::get('link')) && empty(Input::get('image')))
 			{
@@ -60,7 +59,6 @@ class PostController extends BaseController {
 						);
 			}
 			
-
 			
 			if(!empty(Input::get('link')) && empty(Input::get('image')))
 			{
@@ -85,7 +83,6 @@ class PostController extends BaseController {
 		
 		
 		
-
 		try{
 				
 				$request = new Facebook\FacebookRequest($fbApp, $accessToken, 'POST', '/'.Input::get('node').'/'.$where,$data);
@@ -99,5 +96,4 @@ class PostController extends BaseController {
 			}
 		
 	}
-
 }
